@@ -33,8 +33,8 @@ p {
     color: black;
     font-weight: 800;
 }
-.right-mid {
-
+#right-mid {
+    display: none;
 }
 .title {
     text-align: center;

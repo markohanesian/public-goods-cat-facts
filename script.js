@@ -1,15 +1,3 @@
-// get list of cats 
-fetch('https://cat-fact.herokuapp.com').then(function (response) {
-    // successful api call
-    return response.json();
-}).then(function (data) {
-    // JSON data from call 
-    console.log(data)
-}).catch(function (err) {
-    // error
-    console.warn('api call error', err);
-});
-
 // pop-up with delay
 function delayedModalPopup() {
     setTimeout(() => {
@@ -18,3 +6,14 @@ function delayedModalPopup() {
 }
 
 delayedModalPopup();
+
+// get facts button
+function displayCatFacts() {
+    // get list of cats 
+    const response = fetch('https://cat-fact.herokuapp.com/facts', {method: 'post'})
+    .then(response => response.json())
+        .then(data => console.log(data));
+    document.createTextNode(response)
+}
+
+displayCatFacts();
